@@ -930,11 +930,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 7d6f686d-4ea5-4b16-80e1-74228282b839
+  cloudProjectId: 3cae71a7-19a2-4352-a5c9-e47d331760a2
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Template3D
-  organizationId: yskoop
+  projectName: ex-2 2024-11-16_22-17-30
+  organizationId: amitaizenman
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
