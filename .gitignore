@@ -70,3 +70,20 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# JetBrains Rider
+.idea/
+*.iml
+
+# User-specific files
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries/
+
+# Ignore JetBrains IDE project settings
+.idea/shelf/
+.idea/**/deployment.xml
+.idea/**/remoteRepositories.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/gradle.xml
