@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _rigidbody;
     private float _horizontalMovement;
     private float _verticalMovement;
-    [SerializeField] private float force;
+    [SerializeField] private float force = 1000;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
