@@ -5,12 +5,13 @@ public class EnemyMovement : MonoBehaviour
 {
     private int _movementFlag = 1;
     [SerializeField] bool _horizontalMovementFlag = true; // True if vertical, false if horizontal
-    [SerializeField] private float speed = 3;
+    [SerializeField] private float speed = 2;
+    private Rigidbody _rigidbody;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        _rigidbody = GetComponent<Rigidbody>();
         
     }
 
@@ -28,14 +29,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Console.WriteLine("hi");
-        if (_movementFlag == 1)
-        {
-            _movementFlag = 0;
-        }
-        else
-        {
-            _movementFlag = 1;
-        }
+        Debug.Log("Triggered by: " + other.gameObject.name);
+        _movementFlag *= -1; 
     }
 }

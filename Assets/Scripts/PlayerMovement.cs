@@ -39,14 +39,4 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.AddForce(Vector3.up * (Time.fixedDeltaTime * force));
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Point"))
-        {
-            var point = other.gameObject.GetComponent<Point>();
-            Destroy(other.gameObject);
-            _score += 1;
-        }
-    }
 }
