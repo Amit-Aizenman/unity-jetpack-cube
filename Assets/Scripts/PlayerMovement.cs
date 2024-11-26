@@ -39,13 +39,20 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
-    private void OnTriggerEnter(Collider other)
+    private void EnemyHit(int damage)
     {
-        if (other.gameObject.CompareTag("enemy"))
-        {
-            _initialHealth--; 
-            print("Character got hit! Health is now " +_initialHealth);
-        }
+        _initialHealth -= damage;
+        print ("Character got hit! Health is now " + _initialHealth);
+    }
+    
+    private void OnEnable()
+    {
+        MyEvents.OnEnemyHit += EnemyHit;
+    }
+
+    private void OnDisable()
+    {
+        MyEvents.OnPointCollected -= EnemyHit;
     }
     
 }

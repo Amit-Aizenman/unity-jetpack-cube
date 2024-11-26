@@ -5,7 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private int _playerScore;
-    [SerializeField] int _pointToWin = 3;
+    [SerializeField] int pointToWin = 3;
+    [SerializeField] private int hitsToLose = 3;
     
 
     private void Awake()
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         MyEvents.OnPointCollected += HandlePointCollected;
+        MyEvents.OnEnemyHit += EnemyHit;
     }
 
     private void OnDisable()
@@ -36,12 +38,22 @@ public class GameManager : MonoBehaviour
     {
         _playerScore += points;
         print("Point Collected! Current score is " + _playerScore);
-        if (_playerScore >= _pointToWin)
+        if (_playerScore >= pointToWin)
         {
             print ("Congratulations! You won!");
             QuitGame();
         }
     }
+
+    private void EnemyHit(int damage)
+    {
+        hitsToLose--;
+        if (hitsToLose == 0)
+        {
+            print ("game over! Your score is: " + _playerScore);
+        }
+    }
+
 
     public void QuitGame()
     {
