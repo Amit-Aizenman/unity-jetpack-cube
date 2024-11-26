@@ -3,8 +3,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int _playerScore = 0;
+    public static GameManager Instance;
+    private int _playerScore;
     [SerializeField] int _pointToWin = 3;
+    
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
+    }
+
     private void OnEnable()
     {
         MyEvents.OnPointCollected += HandlePointCollected;
@@ -19,7 +36,7 @@ public class GameManager : MonoBehaviour
     {
         _playerScore += points;
         print("Point Collected! Current score is " + _playerScore);
-        if (points >= _pointToWin)
+        if (_playerScore >= _pointToWin)
         {
             print ("Congratulations! You won!");
             QuitGame();
@@ -37,5 +54,6 @@ public class GameManager : MonoBehaviour
         Application.Quit();
         #endif
     }
+
 
 }
