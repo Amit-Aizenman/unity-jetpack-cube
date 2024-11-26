@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetInitialHealth()
     {
-        _initialHealth = 100;
+        _initialHealth = 3;
         hitsToLose = 3;
     }
 
