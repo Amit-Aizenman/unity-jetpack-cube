@@ -1,6 +1,8 @@
 using System;
 using System.Drawing;
+using NUnit.Framework.Constraints;
 using UnityEngine;
+using Object = System.Object;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,19 +12,27 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float force = 1000;
     private int _maxSpeed = 100;
     private int _maxFlySpeed = 100;
+    private Vector3 _initialPosition;
+    public static bool _playerResetFlag = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-     _rigidbody = GetComponent<Rigidbody>();   
+     _rigidbody = GetComponent<Rigidbody>();
+     _initialPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         _horizontalMovement = Input.GetAxis("Horizontal");
         _verticalMovement = Input.GetKey(KeyCode.Space);
-        
+        if (_playerResetFlag)
+        {
+            transform.position = _initialPosition;
+            _playerResetFlag = false;
+        }
     }
 
     private void FixedUpdate()
@@ -37,7 +47,4 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.AddForce(Vector3.up * (Time.fixedDeltaTime * force));
         }
     }
-    
-    
-    
 }

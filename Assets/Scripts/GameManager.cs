@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private int _playerScore;
+    private int _initialHealth = 100;
     [SerializeField] int pointToWin = 3;
     [SerializeField] private int hitsToLose = 3;
     
@@ -20,7 +21,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
     }
 
     private void OnEnable()
@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
 
     private void EnemyHit(int damage)
     {
+        _initialHealth -= damage;
+        print ("Character got hit! Health is now " + _initialHealth);
         hitsToLose--;
         if (hitsToLose <= 0)
         {
@@ -68,9 +70,15 @@ public class GameManager : MonoBehaviour
         #endif
     }
 
-    public int GetPlayerScore()
+    public void ResetPlayerScore()
     {
-        return _playerScore;
+        _playerScore = 0;
+    }
+
+    public void ResetInitialHealth()
+    {
+        _initialHealth = 100;
+        hitsToLose = 3;
     }
 
 
