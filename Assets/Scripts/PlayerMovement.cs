@@ -39,4 +39,14 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.AddForce(Vector3.up * (Time.fixedDeltaTime * force));
         }
     }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("enemy"))
+        {
+            _initialHealth--; 
+            print("Character got hit! Health is now " +_initialHealth);
+        }
+    }
+    
 }

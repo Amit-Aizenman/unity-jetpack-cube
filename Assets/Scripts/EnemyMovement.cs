@@ -29,7 +29,9 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered by: " + other.gameObject.name);
-        _movementFlag *= -1; 
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            _movementFlag *= -1;
+        }
     }
 }
