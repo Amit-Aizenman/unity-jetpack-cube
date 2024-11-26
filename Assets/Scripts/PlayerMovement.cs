@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     private float _horizontalMovement;
     private bool _verticalMovement;
     [SerializeField] private float force = 1000;
-    private int _score = 0;
     private int _initialHealth = 100;
     private int _maxSpeed = 100;
     private int _maxFlySpeed = 100;

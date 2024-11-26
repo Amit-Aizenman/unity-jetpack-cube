@@ -26,11 +26,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int GetPlayerScore()
-    {
-        return _playerScore;
-    }
-
     public void QuitGame()
     {
         #if UNITY_EDITOR
