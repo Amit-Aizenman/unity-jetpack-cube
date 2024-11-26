@@ -48,9 +48,10 @@ public class GameManager : MonoBehaviour
     private void EnemyHit(int damage)
     {
         hitsToLose--;
-        if (hitsToLose == 0)
+        if (hitsToLose <= 0)
         {
             print ("game over! Your score is: " + _playerScore);
+            QuitGame();
         }
     }
 
