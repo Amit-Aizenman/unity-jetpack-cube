@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     private float _horizontalMovement;
     private bool _verticalMovement;
     [SerializeField] private float force = 1000;
-    private int _initialHealth = 100;
     private int _maxSpeed = 100;
     private int _maxFlySpeed = 100;
     
@@ -39,20 +38,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
-    private void EnemyHit(int damage)
-    {
-        _initialHealth -= damage;
-        print ("Character got hit! Health is now " + _initialHealth);
-    }
     
-    private void OnEnable()
-    {
-        MyEvents.OnEnemyHit += EnemyHit;
-    }
-
-    private void OnDisable()
-    {
-        MyEvents.OnPointCollected -= EnemyHit;
-    }
     
 }

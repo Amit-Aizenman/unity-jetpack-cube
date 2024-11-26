@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     private void HandlePointCollected(int points)
     {
         _playerScore += points;
-        print("Point Collected! Current score is " + _playerScore);
+        print("Point Collected! Current score is " +_playerScore);
         if (_playerScore >= pointToWin)
         {
             print ("Congratulations! You won!");
@@ -66,6 +66,11 @@ public class GameManager : MonoBehaviour
         // Close the game!
         Application.Quit();
         #endif
+    }
+
+    public int GetPlayerScore()
+    {
+        return _playerScore;
     }
 
 
