@@ -43,6 +43,7 @@ public class CheatCodeManager : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
+            
             print("Resetting enemies position");
             MyEvents.EnemyReset?.Invoke(1);
 

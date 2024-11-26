@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private int _playerScore;
-    private int _initialHealth = 100;
+    private int _initialHealth = 3;
     [SerializeField] int pointToWin = 3;
     [SerializeField] private int hitsToLose = 3;
     
