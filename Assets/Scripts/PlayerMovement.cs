@@ -15,14 +15,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _initialPosition;
     public static bool _playerResetFlag = false;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
      _rigidbody = GetComponent<Rigidbody>();
      _initialPosition = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -37,13 +35,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_rigidbody.linearVelocity.x < _maxSpeed)
-        {
+        if (_rigidbody.linearVelocity.x < _maxSpeed) {
             _rigidbody.AddForce(Vector3.right * (_horizontalMovement * Time.fixedDeltaTime * force));
         }
 
-        if (_rigidbody.linearVelocity.y < _maxFlySpeed && _verticalMovement)
-        {
+        if (_rigidbody.linearVelocity.y < _maxFlySpeed && _verticalMovement){
             _rigidbody.AddForce(Vector3.up * (Time.fixedDeltaTime * force));
         }
     }
