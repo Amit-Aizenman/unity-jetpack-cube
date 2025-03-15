@@ -19,7 +19,7 @@ This project was part of my Game Development minor, a program jointly offered by
 --- 
 ## Setup
 
-Clone this repository to your desktop and navigate to the 'Run' directory. Then, double-click on the 'TestProject2D.exe' to launch and play the game.
+To get started, clone this repository to your local machine and open it in Unity. Once opened, build the project files and hit play to start the game!
 
 ---
 
