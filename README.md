@@ -5,8 +5,8 @@ In this project, I developed a simple yet engaging player-controlled character t
 This project was part of my Game Development minor, a program jointly offered by Bezalel Academy of Art and Design and the Hebrew University of Jerusalem.
 
 <p align="center">
-  <img src="https://github.com/Amit-Aizenman/unity-slime-game/blob/main/game-demo-1.gif" width="300"/>
-  <img src="https://github.com/Amit-Aizenman/unity-slime-game/blob/main/game-demo-2.gif" width="320"/>
+  <img src="https://github.com/Amit-Aizenman/unity-jetpack-cube/blob/main/game-demo-1.gif" width="300"/>
+  <img src="https://github.com/Amit-Aizenman/unity-jetpack-cube/blob/main/game-demo-2.gif" width="300"/>
 </p>
 
 ---
@@ -18,16 +18,17 @@ This project was part of my Game Development minor, a program jointly offered by
 
 --- 
 ## Setup
-Clone this repo to your desktop and navigate to the 'Run' directory. Then click on 'TestProject2D.exe' to play the game.
+
+Clone this repository to your desktop and navigate to the 'Run' directory. Then, double-click on the 'TestProject2D.exe' to launch and play the game.
 
 ---
 
 ## Cheat Codes 
-- 1 - reset player health
-- 2 - reset wave configuration
-- 3 - destroy all enemies
-- 4 - instant player death
+- 1 - Reset player score
+- 2 - Reset player health
+- 3 - Reset player position
+- 4 - Reset enemies position
 
 ---
 
-Have fun surviving!
+Enjoy the game! 😄
